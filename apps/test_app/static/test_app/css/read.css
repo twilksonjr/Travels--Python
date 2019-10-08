@@ -1,0 +1,41 @@
+*{
+    margin:0px;
+    padding:7px;
+}
+.container{
+    border: 1px solid black;
+    width: 708px;
+    height: 480px;
+}
+.dash{
+    margin-top: 15px;
+    position: absolute;
+    margin-left: 339px;
+    display: inline-block;
+}
+.logout{
+    margin-top: 15px;
+    position: absolute;
+    margin-left: 455px;
+    display: inline-block;
+}
+.hello{
+    font-size: 24px;
+    margin-left: 21px;
+}
+.trip_info{
+    width: 490px;
+    height: 235px;
+    background-color: lightskyblue;
+    border: 1px solid black;
+    margin-top: 35px;
+    margin-left: 25px;
+}
+.footer{
+    border: 1px solid black;
+    width: 708px;
+    background-color: lightgray;
+    margin-top: -61px;
+    height: 45px;
+    margin-left: 0px;
+}

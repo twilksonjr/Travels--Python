@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'test_app/css/style.css' %}"> 
+    </head>
+    <body>
+        <div class='container'>
+
+                <p class="travel">Welcome! Let's travel!!</p>
+                <div class="registration">
+                    <p>Register</p>
+                    <br>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <form action="/registration" method="POST">
+                        {% csrf_token %}
+
+                        <P>First Name <input type="text" name="first_name"></p></P>
+                        <br>
+                        <P>Last Name <input type="text" name="last_name"></p></P>
+                        <br>
+                        <P>Email <input type="text" name="email"></p></P>
+                        <br>
+                        <P>Password <input type="password" name="password"></p></P>
+                        <br>
+                        <P>Confirm Password <input type="password" name="confirm_password"></p></P>
+                        <button type="submit" class="reg">REGISTER</button>
+                    </form>
+                </div>
+     
+                <div class="login">
+                    <form action="/login" method="POST">
+                        {% csrf_token %}
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        <p>LOGIN</p>
+                        <br>
+                        <P>Email <input type="text area" name="login_email"></p></P>
+                        <br>
+                        <P>Password <input type="password" name="login_password"></p></P>
+                        <button type="submit" >login</button>
+                    </form>
+                    
+                </div>
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div class="footer">
+                    <h6>Coding Dojo 2019</h6>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </body>
+
+
+
+
+</html>

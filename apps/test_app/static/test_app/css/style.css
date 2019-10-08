@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding:10px;
+    }
+    .container{
+        border: 1px solid black;
+        width: 970px;
+    }
+    .travel{
+        font-size: 45px;
+        margin-left: 96px;
+        margin-top: -14px
+
+    }
+    .registration{
+        width: 300px;
+        display: inline-block;
+        margin-left: 100px;
+        margin-top: 44px;
+        background-color: lightskyblue;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .login{
+        width: 344px;
+        height: 416px;
+        display: inline-block;
+        margin-left: 60px;
+        background-color: lightskyblue;
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: top;
+        margin-top: 46px
+    }
+    
+    .footer{
+        width: 855px;
+        height: 40px;
+        border: 1px solid black;
+        background-color: lightgray;
+        margin-top: 39px;
+        margin-left: -11px
+    } 

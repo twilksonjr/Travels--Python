@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title></title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                {% load static %}
+                <link rel="stylesheet" href="{% static 'test_app/css/read.css' %}">
+        </head>
+
+        <body>
+                <div class="container">
+                        <a class="dash" href="/dashboard">Dashboard</a>
+                        <a class="logout" href="/">Logout</a>
+                        {% csrf_token %}
+                        <p  class="hello">Hello {{logged_in_user.first_name }}! Read about this trip</p>
+                        <a class="go_back" href="/logout"></a>
+                
+
+                        <div class="trip_info">
+                                <p class='edit'>Destination: {{destination}}</p>
+                                <p class='edit'>Start date: {{start_date}}</p>
+                                <p class='edit'>End date: {{end_date}}</p>
+                                <p class='edit'>Created On: {{this_trip.created_at}}</p>
+                                <p class='edit'>Last Updated: {{this_trip.updated_at}}</p>
+                                <p class='edit'>Plan: {{plan}}</p>
+                                <p class="edit">Created by: {{this_trip.created_by.first_name}}</p>
+                        </div>
+                                        
+                </div>
+                <div class="footer">
+                        <h6>Coding Dojo 2019</h6>
+                </div>
+
+        </body>
+        
+</html>

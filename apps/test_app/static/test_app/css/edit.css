@@ -1,0 +1,85 @@
+*{
+    margin:0px;
+    padding:7px;
+}
+.container{
+    border: 1px solid black;
+    width: 785px;
+    height: 477px;
+}
+.p{
+    font-size:18px;
+}
+.hello{
+    font-size:26px;
+}
+.go_back{
+    font-size: 19px;
+    margin-left: 585px;
+    vertical-align: top;
+    margin-top: 10px;
+    background-color: orange;
+    border: 1px solid black;
+    position: absolute;
+}
+.dash {
+    margin-top: -30px;
+    position: absolute;
+    margin-left: 424px;
+    display: inline-block;
+}
+.trip{
+    background-color: lightskyblue;
+    height: 375px;
+    padding: 32px;
+}
+.trip_info{
+    height: 220px;
+    width: 236px;
+    background-color: rgb(221, 229, 236);
+    display: inline-block;
+    padding: 2px;
+    border: 1px solid black;
+    margin-top: 153px;
+    position: absolute;
+}
+.messages {
+    display: inline-block;
+    background-color: greenyellow;
+    width: 322px;
+    height: 125px;
+    padding: 3px;
+}
+.edit_message{
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 50px;
+}
+p.edit{
+    margin-left: -1px;
+    margin-top: 14px
+}
+.form{
+    height: 230px;
+    width: 166px;
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 370px;
+    margin-top: -7px;
+}
+.input{
+    margin-left:5px;
+    padding-top:5px;
+}
+.create_event{
+    margin-left: 33px;
+
+}
+.footer{
+    width: 784px;
+    background-color: lightgray;
+    margin-top: 0px;
+    height: 45px;
+    border: 1px solid black;
+    margin-left: -7px;
+}

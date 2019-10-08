@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit Trip3</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'test_app/css/edit.css' %}">  
+    </head>
+    <body>
+        <a class="go_back" href="/logout">Logout</a>
+        <div class='container'>
+            <p  class="hello">Hello {{logged_in_user.first_name }}! Let's edit your trip</p>
+            <a class="dash" href="/dashboard">Dashboard</a>
+            <div class="trip">
+                <div class="trip_info">
+                    <p class='edit'>Destination: {{destination}}</p>
+                    <p class='edit'>Start date: {{start_date}}</p>
+                    <p class='edit'>End date: {{end_date}}</p>
+                    <p class='edit'>Plan: {{plan}}</p>
+                </div>
+                <div class="messages">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+
+                <p class="edit_message"></p> EDIT YOUR TRIP</p>
+                <div class="form">
+                    <form class="trips" action="/update_trip/{{this_trip.id}}" method="POST">
+                        {% csrf_token %}
+                        Destination:<input type="text" name="destination">
+                        <br>
+                        Start date:<input type="date" name="start_date">
+                        <br>
+                        End date:<input type="date" name="end_date">
+                        <br>
+                        Plan:<input type="text" name="plan">
+                        <br>
+                        <input type="submit" class="edit_event" value="submit">
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <h6>Coding Dojo 2019</h6>
+            </div>
+
+
+
+
+
+        </div>
+
+    </body>
+
+
+</html>

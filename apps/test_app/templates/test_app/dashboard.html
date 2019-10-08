@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'test_app/css/dashstyle.css' %}">
+        <title>Dashboard2</title>
+    </head>
+    <body>
+        <div class='container'>
+                <p class="hello">Hello {{logged_in_user.first_name}}!</p>
+
+                <p class="trips">Your Trips</p>
+
+                <form name="loginForm" method="post" action="placeholder"">
+                {% csrf_token %}
+                <a class="logout" href="/logout">Logout</a>
+                </form>
+                <a class="createbutton" href ="/trip">Create a new trip!</a>
+                <div class="table_one">
+                    <table>
+                            <thead>
+                                    <tr>
+                                        <th>Destination</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Plan</th>
+                                        <th>Actions</th>
+                                    </tr>
+                            </thead>
+                                <tbody>
+                                
+                                    {% for trip in all_trips %}
+                                    <tr>
+                                        <td><a href="/read/{{ trip.id }}">{{ trip.destination }}</a></td>
+                                        <td>{{ trip.start_date }}</td>
+                                        <td>{{ trip.end_date }}</td>
+                                        <td>{{ trip.plan }}</td>
+                                        {% if request.session.user_id == trip.created_by.id %}
+                                            <td><a href="/delete_trip/{{ trip.id }}">Remove</a></td>
+                                            <td><a href="/edit_trip/{{trip.id}}">Edit</a></td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                        
+
+                                </tbody>
+                            </table>
+                </div>
+                
+                        <br>
+
+
+
+                <div class="logout">
+                </div>
+
+                <div class="footer">
+                    <h6>Coding Dojo 2019</h6>
+                </div>
+
+
+            </div>
+
+
+    </body>
+
+
+</html>

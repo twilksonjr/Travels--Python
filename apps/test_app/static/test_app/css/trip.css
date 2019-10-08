@@ -1,0 +1,72 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.container{
+    border: 1px solid black;
+    width: 785px;
+    height: 610px
+}
+.p{
+    font-size:18px;
+}
+.title{
+    font-size: 26px;
+    margin-left: 80px;
+    margin-top: 17px;
+}
+.dash {
+    margin-top: 5px;
+    position: absolute;
+    margin-left: 424px;
+    display: inline-block;
+}
+.logout{
+    background-color: orange;
+    margin-left: 591px;
+    vertical-align: top;
+    margin-top: -20px;
+    font-size: 18px;
+    width: 77px;
+
+}
+.logouts{
+    font-size: 16px;
+    vertical-align: top;
+    margin-left: 556px;
+    background-color: orange;
+    display:inline-block;
+}
+.trip{
+    border: 1px solid black;
+    margin-top: 32px;
+    margin-left: 73px;
+    width: 600px;
+    height: 384px;
+    background-color: lightskyblue;
+    display: inline-block;
+}
+.tripcreate{
+    font-size: 21px;
+    padding: 6px;
+    height: 342px;
+}
+.submit_btn{
+    font-size: 18px;
+    background-color: orange;
+    margin-left: 21px;
+
+}
+.cancel{
+    font-size:18px;
+    background-color:orange;
+    margin-left:110px;
+    
+}
+.footer{
+    border: 1px solid black;
+    width: 784px;
+    background-color: lightgray;
+    margin-top: 115px;
+    height: 45px;
+}

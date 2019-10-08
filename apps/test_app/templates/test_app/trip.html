@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+ <html class="no-js"> 
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title></title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'test_app/css/trip.css' %}">
+        </head>
+        <body>
+                <div class='container'>
+                        <p class="title">Hello {{logged_in_user.first_name}}!  Create a trip</p>
+                        <a class="dash" href="/dashboard">Dashboard</a>
+                                <a class="logout" href="/logout">Logout</a>
+                        </form>
+                    <div class="trip">
+                        <form class="tripcreate"  action="/create_trip" method="POST">
+                            {% csrf_token %}
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                            <P>Destination <input type="text" name="destination"></p>
+                            <br>
+
+                            <P>Start Date <input type="date" name="start_date"></p>
+                            <br>
+
+                            <P>End Date  <input type="date" name="end_date"></p>
+                            <br>
+
+                            
+                            <P>Plan<input type="text area "rows="8" cols="20" name="plan"></p>
+                            <br>
+                            <br>
+                            <a class="go_back" href="/trip">Cancel</a>
+                            <input class="submit_btn"type="submit" value="submit">
+                        </form>
+                        
+                    </div>
+                    <div class="footer">
+                        <h6>Coding Dojo 2019</h6>
+                    </div>
+        
+        
+        
+        
+        
+                </div>
+            
+        </body>
+</html>
